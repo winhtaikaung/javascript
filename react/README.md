@@ -123,7 +123,7 @@
 
 ## Alignment
 
-  - Jsx Language အထားအသို အတွက် အောက်ပါ alignment ပံုစံများကိုလိုက်နာပါ။ eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - Jsx Language အထားအသို အတွက် အောက်ပါ alignment ပုံစံများကိုလိုက်နာပါ။ eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
     ```jsx
     // မသုံးသင့်သောပုံစံ
@@ -157,7 +157,7 @@
   > Regular HTML attributes also typically use double quotes instead of single, so JSX attributes mirror this convention.
   
   > ဘာကြောင့်လဲ? JSX attributes [ escaped quotes တွေပါလို့မရပါ](http://eslint.org/docs/rules/jsx-quotes), `"don't"` ကဲ့ သို့သော စာသားများ ကို လွယ်ကူစွာ ရိုက်ရန် double quotes တွေက တွဲဖက်အနေနဲ့ ပြုလုပ်ပေးပါတယ်။
-  > ပံုမှန် HTML attributes တွေဟာလည်း များသောအားဖြင့် single quotes အစား double quotes များကိုသာသုံးကြပါတယ်, JSX attributes တွေဟာလဲ ထိုစံနှုန်းကိုယူထားခြင်းဖြစ်ပါတယ်။
+  > ပုံမှန် HTML attributes တွေဟာလည်း များသောအားဖြင့် single quotes အစား double quotes များကိုသာသုံးကြပါတယ်, JSX attributes တွေဟာလဲ ထိုစံနှုန်းကိုယူထားခြင်းဖြစ်ပါတယ်။
 
     ```jsx
     // မသုံးသင့်သောပုံစံ
@@ -255,7 +255,7 @@
   - Do not use words like "image", "photo", or "picture" in `<img>` `alt` props. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
   - `<img>` `alt` ရဲ့ props တွေမှာ "image", "photo" or "picture" ကဲ့သို့သာေစကားလံုးများကိုမသုံးရပါ။ eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
 
-  > ဘာကြောင့်လဲ? Screenreaders များ မှာ `img` element များကို ပံု အဖြစ် သိရှိရန် ပြုလုပ်ထားပြီးဖြစ်ပါတယ်။ ထို့ကြောင့် ထိုကဲ့သို့သော အချက်အလက်များကို alt မှာထည့်ဖို့မလိုပါ။
+  > ဘာကြောင့်လဲ? Screenreaders များ မှာ `img` element များကို ပုံ အဖြစ် သိရှိရန် ပြုလုပ်ထားပြီးဖြစ်ပါတယ်။ ထို့ကြောင့် ထိုကဲ့သို့သော အချက်အလက်များကို alt မှာထည့်ဖို့မလိုပါ။
 
     ```jsx
     // မသုံးသင့်သောပုံစံ
@@ -280,7 +280,7 @@
 
   - element တွေပါ်မှာ `accessKey` မသုံးသင့်ပါ။. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
 
-  > ဘာကြောင့်လဲ? အသံုးပြုသူတွေရဲ့ Screenreaders တွေနဲ့ keyboard(commands) တွဲမှတ်မှုများက တဦးနှင့်တဦး မတူလို့ပါ။ 
+  > ဘာကြောင့်လဲ? အသုံးပြုသူတွေရဲ့ Screenreaders တွေနဲ့ keyboard(commands) တွဲမှတ်မှုများက တဦးနှင့်တဦး မတူလို့ပါ။ 
 
   ```jsx
   // မသုံးသင့်သောပုံစံ
@@ -290,7 +290,7 @@
   <div />
   ```
 
-  - array အခန်း နံပတ်များ ကို prop ရဲ့ `key` အဖြစ်မသံုးသင့်ပါ။ မတူညီနိုင်တဲ့ ID(unique ID) များကိုသာသံုးသင့်ပါတယ်။ ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
+  - array အခန်း နံပတ်များ ကို prop ရဲ့ `key` အဖြစ်မသုံးသင့်ပါ။ မတူညီနိုင်တဲ့ ID(unique ID) များကိုသာသုံးသင့်ပါတယ်။ ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
 
   ```jsx
   // မသုံးသင့်သောပုံစံ
@@ -312,15 +312,15 @@
 
 ## Refs
 
-  - Always use ref callbacks. eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)
+  - `ref` များကို callback ဖြင့်သုံးပါ. eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo
       ref="myRef"
     />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <Foo
       ref={(ref) => this.myRef = ref}
     />
@@ -328,17 +328,17 @@
 
 ## Parentheses
 
-  - Wrap JSX tags in parentheses when they span more than one line. eslint: [`react/wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/wrap-multilines.md)
+  - တကြောင်းထက်ပိုသာေ JSX tags များကို လက်သည်းကွင်းတွင်ထည့်ပါ။ eslint: [`react/wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/wrap-multilines.md)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     render() {
       return <MyComponent className="long body" foo="bar">
                <MyChild />
              </MyComponent>;
     }
 
-    // good
+    // သုံးသင့်သောပုံစံ
     render() {
       return (
         <MyComponent className="long body" foo="bar">
@@ -347,7 +347,7 @@
       );
     }
 
-    // good, when single line
+    // သုံးသင့်သောပုံစံ, တကြောင်းတည်းသော JSX tag
     render() {
       const body = <div>hello</div>;
       return <MyComponent>{body}</MyComponent>;
@@ -356,25 +356,25 @@
 
 ## Tags
 
-  - Always self-close tags that have no children. eslint: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
+  - child tag မရှိတဲ့ tag များကို self-close tage ပုံစံပြောင်းရေးပါ။. eslint: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo className="stuff"></Foo>
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <Foo className="stuff" />
     ```
 
-  - If your component has multi-line properties, close its tag on a new line. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - သင့် component မှာ တကြောင်းထက် ပိုတဲ့ properties တွေရှိနေခဲ့ရင် ၄င်း tag ကို နောက် တကြောင်းဆင်းပြီး ပိတ်ပေးပါ။ eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo
       bar="bar"
       baz="baz" />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <Foo
       bar="bar"
       baz="baz"
@@ -400,12 +400,13 @@
     }
     ```
 
-  - Bind event handlers for the render method in the constructor. eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
+  - constructor ထဲမှာသာ render method ရဲ့ event handlers များ ကို တွဲ(bind) ပေးပါ။  eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
 
   > Why? A bind call in the render path creates a brand new function on every single render.
+  > ဘာကြောင့်လဲ? render method ကိုတခါတခါ ခေါ်တိုင်းမှာ bind သည် လည်းပဲ အသစ်ထပ်မံခေါ်ခံရလို့ဖြစ်ပါတယ်။
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     class extends React.Component {
       onClickDiv() {
         // do stuff
@@ -416,7 +417,7 @@
       }
     }
 
-    // good
+    // သုံးသင့်သောပုံစံ
     class extends React.Component {
       constructor(props) {
         super(props);
@@ -434,10 +435,10 @@
     }
     ```
 
-  - Do not use underscore prefix for internal methods of a React component.
+  - `_` ကို React Component အတွင်းမှာရှိတဲ့ methods တွေမှာ မသံုးရပါ။
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     React.createClass({
       _onClickSubmit() {
         // do stuff
@@ -446,7 +447,7 @@
       // other stuff
     });
 
-    // good
+    // သုံးသင့်သောပုံစံ
     class extends React.Component {
       onClickSubmit() {
         // do stuff
@@ -457,14 +458,15 @@
     ```
 
   - Be sure to return a value in your `render` methods. eslint: [`require-render-return`](https://github.com/yannickcr/eslint-plugin-react/pull/502)
+  - `render` method တွေမှာ return value ပါဝင်ပါစေ။ eslint: [`require-render-return`](https://github.com/yannickcr/eslint-plugin-react/pull/502)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     render() {
       (<div />);
     }
 
-    // good
+    // သုံးသင့်သောပုံစံ
     render() {
       return (<div />);
     }
@@ -473,6 +475,7 @@
 ## Ordering
 
   - Ordering for `class extends React.Component`:
+  - `class extends React.Component` ရဲ့ method အထားအသို အစီအစဥ်:
 
   1. optional `static` methods
   1. `constructor`
@@ -489,7 +492,7 @@
   1. *Optional render methods* like `renderNavigation()` or `renderProfilePicture()`
   1. `render`
 
-  - How to define `propTypes`, `defaultProps`, `contextTypes`, etc...
+  - `propTypes`, `defaultProps`, `contextTypes`, စသည်ဖြင့်... ဘယ်လို သတ်မှတ်မလဲ
 
     ```jsx
     import React, { PropTypes } from 'react';
@@ -546,18 +549,19 @@
 
 ## `isMounted`
 
-  - Do not use `isMounted`. eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
+  - `isMounted` ကိုအသံုးမပြုသင့်တော့ပါ။ eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
 
-  > Why? [`isMounted` is an anti-pattern][anti-pattern], is not available when using ES6 classes, and is on its way to being officially deprecated.
+  > ဘာကြောင့်လဲ? [`isMounted` is an anti-pattern][anti-pattern], ၄င်း ကို ES6 မှာအသံုးမပြုနိုင်တော့လို့ပါ, နောက်ပြီး၄င်း ကို ဖျက်ဖို့ တရားဝင်စာတင်ထားပြီးဖြစ်ပါတယ်
 
   [anti-pattern]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
 
 ## Translation
 
-  This JSX/React style guide is also available in other languages:
+  ဤ JSX/React ရေးသားပုံ လမ်းညွှန်ကို အခြားသော ဘာသာစကားများဖြင့်လည်း ဖတ်ရှုနိုင်ပါသည်။
 
   - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [JasonBoy/javascript](https://github.com/JasonBoy/javascript/tree/master/react)
   - ![pl](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Poland.png) **Polish**: [pietraszekl/javascript](https://github.com/pietraszekl/javascript/tree/master/react)
   - ![kr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **Korean**: [apple77y/javascript](https://github.com/apple77y/javascript/tree/master/react)
+  - ![mm](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Myanmar.png) **Myanmar**: [winhtaikaung/javascript](https://github.com/winhtaikaung/javascript/tree/master/react)
 
 **[⬆ back to top](#table-of-contents)**
