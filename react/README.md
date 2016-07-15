@@ -19,21 +19,21 @@
   1. [Ordering](#ordering)
   1. [`isMounted`](#ismounted)
 
-## အခြေခံ စည်းမျဉ်းများ
+## basic-rules
 
   - Only include one React component per file. File တခုတွင် React Component တခုသာပါရှိပါစေ
   - သို့သော် Stateless သို့မဟုတ် ရိုးရှင်းတဲ့ Components(https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) များမှာတော့တခုထက်မကပါဝင်နိုင်ပါတယ်။eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
     
-  - JSX Syntax ကိုသာအမြဲသံုးပေးပါ။.
-  - JSX File မဟုတ် တဲ့ တခြားဖိုင်တွေနဲ့(Eg. javascript File) သင့် app ကိုစမယ်ဆိုရင် `React.createElement` ကိုမသံုးရပါဘူး။
+  - JSX Syntax ကိုသာအမြဲသုံးပေးပါ။.
+  - JSX File မဟုတ် တဲ့ တခြားဖိုင်တွေနဲ့(Eg. javascript File) သင့် app ကိုစမယ်ဆိုရင် `React.createElement` ကိုမသုံးရပါဘူး။
   
 
 ## Class vs `React.createClass` vs stateless
 
-  - If you have internal state and/or refs, prefer `class extends React.Component` over `React.createClass` unless you have a very good reason to use mixins. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
+   - အကယ် လို့ သင့် Component ထဲမှာ state သို့ မဟုတ် refs တွေရှိနေမယ် ဆိုရင် `React.createClass` ထက်စာရင် `class extends React.Component` ကိုသုံးသင့်ပါတယ် သင့်မှာ mixing တွေသုံးဖို့ ခိုင်လုံတဲ့အကြောင်းပြချက်မရှိခဲ့ရင်။eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     const Listing = React.createClass({
       // ...
       render() {
@@ -41,7 +41,7 @@
       }
     });
 
-    // good
+    // သုံးသင့်သောပုံစံ
     class Listing extends React.Component {
       // ...
       render() {
@@ -51,21 +51,22 @@
     ```
 
     And if you don't have state or refs, prefer normal functions (not arrow functions) over classes:
+    ပြီးတော့ သင့်ဆီမှာ state သို့မဟုတ် refs တွေမရှိခဲ့ရင် class ကိုသုံးတာထက်စာရင် ပုံမှန် functions(arrow function မဟုတ်ပါ)များကိုသာသုံးသင့်ပါတယ်။
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     class Listing extends React.Component {
       render() {
         return <div>{this.props.hello}</div>;
       }
     }
 
-    // bad (relying on function name inference is discouraged)
+    // မသုံးသင့်သောပုံစံ (relying on function name inference is discouraged)
     const Listing = ({ hello }) => (
       <div>{hello}</div>
     );
 
-    // good
+    // သုံးသင့်သောပုံစံ
     function Listing({ hello }) {
       return <div>{hello}</div>;
     }
@@ -73,63 +74,64 @@
 
 ## Naming
 
-  - **Extensions**: Use `.jsx` extension for React components.
-  - **Filename**: Use PascalCase for filenames. E.g., `ReservationCard.jsx`.
-  - **Reference Naming**: Use PascalCase for React components and camelCase for their instances. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
+  - **Extensions**: React components တွေအတွက်သာ `.jsx` ကိုသုံးပါ။  
+  - **Filename**: File နာမည်များကို PascalCase သာသုံးပါ။ E.g., `ReservationCard.jsx`.
+  - **Reference Naming**: PascalCase ကို React components အတွက်သုံးပြီး တော့ component ထဲမှာပါတဲ့ method တွေကိုတော့ camelCase သုံးပါ။. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     import reservationCard from './ReservationCard';
 
-    // good
+    // သုံးသင့်သောပုံစံ
     import ReservationCard from './ReservationCard';
 
-    // bad
+    // မသုံးသင့်သောပုံစံ
     const ReservationItem = <ReservationCard />;
 
-    // good
+    // သုံးသင့်သောပုံစံ
     const reservationItem = <ReservationCard />;
     ```
 
   - **Component Naming**: Use the filename as the component name. For example, `ReservationCard.jsx` should have a reference name of `ReservationCard`. However, for root components of a directory, use `index.jsx` as the filename and use the directory name as the component name:
+  - **Component Naming**: file နာမည်များကို component နာမည်များအဖြစ်သုံးပေးပါ။ ဥပမာ `ReservationCard.jsx` မှာ reference နာမည် က `ReservationCard` ပဲဖြစ်သင့်ပါတယ်။ သို့သော် Directory(ဖိုလ်ဒါ)တခုရဲ့ root component တွေကိုတော့ File နာမည် ကို `index.jsx` လို့သုံးသင့်ပြီး Directory(ဖိုလ်ဒါ) နာမည် ကို component နာမည်အဖြစ်သုံးသင့်ပါတယ်။  
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     import Footer from './Footer/Footer';
 
-    // bad
+    // မသုံးသင့်သောပုံစံ
     import Footer from './Footer/index';
 
-    // good
+    // သုံးသင့်သောပုံစံ
     import Footer from './Footer';
     ```
 
 ## Declaration
 
-  - Do not use `displayName` for naming components. Instead, name the component by reference.
+  - components တွေကို နာမည်ပေးဖို့ `displayName` မသုံးရပါ. ထိုအစား  component ကို reference အားဖြင့်သာ နာမည်ပေးသင့်ပါတယ်။
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     export default React.createClass({
       displayName: 'ReservationCard',
       // stuff goes here
     });
 
-    // good
+    // သုံးသင့်သောပုံစံ
     export default class ReservationCard extends React.Component {
     }
     ```
 
 ## Alignment
 
-  - Follow these alignment styles for JSX syntax. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - Jsx Language အထားအသို အတွက် အောက်ပါ alignment ပံုစံများကိုလိုက်နာပါ။ eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo superLongParam="bar"
          anotherSuperLongParam="baz" />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <Foo
       superLongParam="bar"
       anotherSuperLongParam="baz"
@@ -150,9 +152,13 @@
 ## Quotes
 
   - Always use double quotes (`"`) for JSX attributes, but single quotes for all other JS. eslint: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes)
+  - JSX ရဲ့ attributes များကို (`"`) များဖြင့်အမြဲတမ်းသုံးပေးပါ။, သို့သော် (`'`) ကို တခြား JS များမှာသုံးပါ။. eslint: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes)
 
   > Why? JSX attributes [can't contain escaped quotes](http://eslint.org/docs/rules/jsx-quotes), so double quotes make conjunctions like `"don't"` easier to type.
   > Regular HTML attributes also typically use double quotes instead of single, so JSX attributes mirror this convention.
+  
+  > ဘာကြောင့်လဲ? JSX attributes [ escaped quotes တွေပါလို့မရပါ](http://eslint.org/docs/rules/jsx-quotes), `"don't"` ကဲ့ သို့သော စာသားများ ကို လွယ်ကူစွာ ရိုက်ရန် double quotes တွေက တွဲဖက်အနေနဲ့ ပြုလုပ်ပေးပါတယ်။
+  > ပံုမှန် HTML attributes တွေဟာလည်း များသောအားဖြင့် single quotes အစား double quotes များကိုသာသုံးကြပါတယ်, JSX attributes တွေဟာလဲ ထိုစံနှုန်းကိုယူထားခြင်းဖြစ်ပါတယ်။
 
     ```jsx
     // bad
