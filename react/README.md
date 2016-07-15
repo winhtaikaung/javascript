@@ -50,7 +50,6 @@
     }
     ```
 
-    And if you don't have state or refs, prefer normal functions (not arrow functions) over classes:
     ပြီးတော့ သင့်ဆီမှာ state သို့မဟုတ် refs တွေမရှိခဲ့ရင် class ကိုသုံးတာထက်စာရင် ပုံမှန် functions(arrow function မဟုတ်ပါ)များကိုသာသုံးသင့်ပါတယ်။
 
     ```jsx
@@ -161,137 +160,140 @@
   > ပံုမှန် HTML attributes တွေဟာလည်း များသောအားဖြင့် single quotes အစား double quotes များကိုသာသုံးကြပါတယ်, JSX attributes တွေဟာလဲ ထိုစံနှုန်းကိုယူထားခြင်းဖြစ်ပါတယ်။
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo bar='bar' />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <Foo bar="bar" />
 
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo style={{ left: "20px" }} />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <Foo style={{ left: '20px' }} />
     ```
 
 ## Spacing
 
   - Always include a single space in your self-closing tag.
+  - self-closing tag တွမှာ အမြဲတမ်း space တခုတော့ အမြဲထည့်ပေးပါ။
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo/>
 
-    // very bad
+    // မသုံးသင့်သောပုံစံ
     <Foo                 />
 
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo
      />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <Foo />
     ```
 
-  - Do not pad JSX curly braces with spaces. eslint: [`react/jsx-curly-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md)
+  - JSX ရဲ့ တွန့်ကွင်း များကို space တွေနဲ့မဖြည့်သင့်ပါ။. eslint: [`react/jsx-curly-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo bar={ baz } />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <Foo bar={baz} />
     ```
 
 ## Props
 
   - Always use camelCase for prop names.
+  - prop names များကို camelCase သာအမြဲသုံးပေးပါ။
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo
       UserName="hello"
       phone_number={12345678}
     />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <Foo
       userName="hello"
       phoneNumber={12345678}
     />
     ```
 
-  - Omit the value of the prop when it is explicitly `true`. eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
+  - prop ရဲ့ value ဟာ လံုးဝ `true` ဖြစ်မှာသေချာတယ်ဆိုရင် value ကိုမပေးဘဲချန်ထားလို့ရပါတယ်။. eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <Foo
       hidden={true}
     />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <Foo
       hidden
     />
     ```
 
-  - Always include an `alt` prop on `<img>` tags. If the image is presentational, `alt` can be an empty string or the `<img>` must have `role="presentation"`. eslint: [`jsx-a11y/img-has-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-has-alt.md)
+  - `<img>` tag တွေမှာ `alt` prop ကိုအမြဲတမ်း ထည့်ပေးပါ. အကယ်လို့ image ကို တင်ပြဖို့အတွက်သုံးမယ်ဆိုရငတော့ `alt` ကို string အလွတ် သို့မဟုတ် `role="presentation"` ကိုထည့်သင့်ပါတယ်။ eslint: [`jsx-a11y/img-has-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-has-alt.md)
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <img src="hello.jpg" />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <img src="hello.jpg" alt="Me waving hello" />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <img src="hello.jpg" alt="" />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <img src="hello.jpg" role="presentation" />
     ```
 
   - Do not use words like "image", "photo", or "picture" in `<img>` `alt` props. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
+  - `<img>` `alt` ရဲ့ props တွေမှာ "image", "photo" or "picture" ကဲ့သို့သာေစကားလံုးများကိုမသုံးရပါ။ eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
 
-  > Why? Screenreaders already announce `img` elements as images, so there is no need to include this information in the alt text.
+  > ဘာကြောင့်လဲ? Screenreaders များ မှာ `img` element များကို ပံု အဖြစ် သိရှိရန် ပြုလုပ်ထားပြီးဖြစ်ပါတယ်။ ထို့ကြောင့် ထိုကဲ့သို့သော အချက်အလက်များကို alt မှာထည့်ဖို့မလိုပါ။
 
     ```jsx
-    // bad
+    // မသုံးသင့်သောပုံစံ
     <img src="hello.jpg" alt="Picture of me waving hello" />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <img src="hello.jpg" alt="Me waving hello" />
     ```
 
-  - Use only valid, non-abstract [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
+  - တိကျသာေအခေါ် အဝေါ် များကိုသာ သုံးပါ [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
     ```jsx
-    // bad - not an ARIA role
+    // မသုံးသင့်သောပုံစံ - not an ARIA role
     <div role="datepicker" />
 
-    // bad - abstract ARIA role
+    // မသုံးသင့်သောပုံစံ - abstract ARIA role
     <div role="range" />
 
-    // good
+    // သုံးသင့်သောပုံစံ
     <div role="button" />
     ```
 
-  - Do not use `accessKey` on elements. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
+  - element တွေပါ်မှာ `accessKey` မသုံးသင့်ပါ။. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
 
-  > Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.
+  > ဘာကြောင့်လဲ? အသံုးပြုသူတွေရဲ့ Screenreaders တွေနဲ့ keyboard(commands) တွဲမှတ်မှုများက တဦးနှင့်တဦး မတူလို့ပါ။ 
 
   ```jsx
-  // bad
+  // မသုံးသင့်သောပုံစံ
   <div accessKey="h" />
 
-  // good
+  // သုံးသင့်သောပုံစံ
   <div />
   ```
 
-  - Avoid using an array index as `key` prop, prefer a unique ID. ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
+  - array အခန်း နံပတ်များ ကို prop ရဲ့ `key` အဖြစ်မသံုးသင့်ပါ။ မတူညီနိုင်တဲ့ ID(unique ID) များကိုသာသံုးသင့်ပါတယ်။ ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
 
   ```jsx
-  // bad
+  // မသုံးသင့်သောပုံစံ
   {todos.map((todo, index) =>
     <Todo
       {...todo}
@@ -299,7 +301,7 @@
     />
   )}
 
-  // good
+  // သုံးသင့်သောပုံစံ
   {todos.map(todo => (
     <Todo
       {...todo}
