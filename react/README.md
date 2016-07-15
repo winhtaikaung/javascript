@@ -1,10 +1,10 @@
-# Airbnb React/JSX Style Guide
+# Airbnb မှ React/JSX Style Guide
 
 *A mostly reasonable approach to React and JSX*
 
-## Table of Contents
+## မာတိကာ
 
-  1. [Basic Rules](#basic-rules)
+  1. [အခြေခံ စည်းမျဉ်းများ](#basic-rules)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
   1. [Naming](#naming)
   1. [Declaration](#declaration)
@@ -19,12 +19,14 @@
   1. [Ordering](#ordering)
   1. [`isMounted`](#ismounted)
 
-## Basic Rules
+## အခြေခံ စည်းမျဉ်းများ
 
-  - Only include one React component per file.
-    - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
-  - Always use JSX syntax.
-  - Do not use `React.createElement` unless you're initializing the app from a file that is not JSX.
+  - Only include one React component per file. File တခုတွင် React Component တခုသာပါရှိပါစေ
+  - သို့သော် Stateless သို့မဟုတ် ရိုးရှင်းတဲ့ Components(https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) များမှာတော့တခုထက်မကပါဝင်နိုင်ပါတယ်။eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
+    
+  - JSX Syntax ကိုသာအမြဲသံုးပေးပါ။.
+  - JSX File မဟုတ် တဲ့ တခြားဖိုင်တွေနဲ့(Eg. javascript File) သင့် app ကိုစမယ်ဆိုရင် `React.createElement` ကိုမသံုးရပါဘူး။
+  
 
 ## Class vs `React.createClass` vs stateless
 
